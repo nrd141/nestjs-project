@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BookModule } from './book/book.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { GameModule } from './game/game.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { MongooseModule } from '@nestjs/mongoose';
       isGlobal: true, 
     }),
     MongooseModule.forRoot(process.env.DB_URI),
-    BookModule],
+    GameModule,
+    AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
