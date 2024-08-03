@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Game } from './schemas/game.schema';
 import * as mongoose from 'mongoose';
-import { User } from 'src/auth/schemas/user.schema';
+import { User } from '../auth/schemas/user.schema';
 
 @Injectable()
 export class GameService {
@@ -39,7 +39,8 @@ export class GameService {
         });
     }
 
-    async deleteById(id: string): Promise<Game> {
-        return await this.gameModel.findByIdAndDelete(id);
+    async deleteById(id: string): Promise<{deleted: boolean}> {
+        await this.gameModel.findByIdAndDelete(id);
+        return {deleted: true}
     }
 }

@@ -47,7 +47,7 @@ export class GameController {
     async deleteGame(
         @Param('id')
         id: string,
-    ): Promise<Game> {
+    ): Promise<{deleted: boolean}> {
         return this.gameService.deleteById(id);
     }
 }
