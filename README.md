@@ -21,11 +21,7 @@ This project follows the pattern of Module, Controller, and Service.
 2. **Controller**: Handles HTTP requests and responses for a module.
 3. **Service**: Contains business logic and interacts with the database for a module.
 
-The  pattern is chosen for the following reasons:
-- **Separation of Concerns**: Each module has a distinct responsibility, making the code easier to manage and understand.
-- **Scalability**: New features can be added as new modules without affecting existing code.
-- **Maintainability**: Changes in one part of the application do not affect other parts.
-
+The pattern is chosen to make the code easier to manage and understand becuase each module has a separate responsibility. Also new features can be added as new modules without affecting existing code.
 
 ## Install dependencies
 
@@ -43,19 +39,17 @@ JWT_EXPIRE=1d
 ## Running the app
 
 ```bash
-# development
 $ npm run start
 ```
 
 ## Test
 
 ```bash
-# e2e tests
 $ npm run test:e2e
 ```
 
 ## Access API Documentation
-
-Visit `http://localhost:3000/api` to view the Swagger documentation.
+- Visit `http://localhost:3000/api` to view the Swagger documentation.
+- Visit `https://documenter.getpostman.com/view/30261719/2sA3rwMuHd` to view the Postman documentation.
 
 
