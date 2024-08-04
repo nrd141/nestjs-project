@@ -34,6 +34,7 @@ export class GameController {
     }
 
     @Put(':id')
+    @UseGuards(AuthGuard())
     async updateGame(
         @Param('id')
         id: string,
@@ -44,6 +45,7 @@ export class GameController {
     }
 
     @Delete(':id')
+    @UseGuards(AuthGuard())
     async deleteGame(
         @Param('id')
         id: string,
